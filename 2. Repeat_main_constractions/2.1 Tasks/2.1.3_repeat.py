@@ -1,12 +1,7 @@
-def check_right(seq):
+def inversions(sequence):
     count = 0
-    for el in seq:
-        if el == '(':
-            count += 1
-        elif el == ')':
-            count -= 1
-        if count < 0:
-            return False    
-    return not bool(count)
-
-print(check_right(input()))
+    for i in range(len(sequence) - 1):
+        for j in range(i, len(sequence)):
+            if sequence[i] > sequence[j]:
+                count += 1
+    return count
