@@ -8,3 +8,5 @@ def limited_hash(left, right, hash_function=hash):
                 result = right - (left - result - 1)
         return result            
     return new_function
+
+    
