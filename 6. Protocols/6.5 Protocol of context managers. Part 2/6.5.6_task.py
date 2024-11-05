@@ -1,9 +1,6 @@
 import sys
 
 class UpperPrint:
-    def __init__(self):
-        self.print = print
-
     def upper_out(self, text):
         return self.standart_out(text.upper())
 
