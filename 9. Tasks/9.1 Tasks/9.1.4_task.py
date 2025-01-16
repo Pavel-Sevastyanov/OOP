@@ -13,15 +13,8 @@ class ArithmeticProgression:
         return elem
 
 
-class GeometricProgression:
-    def __init__(self, b1, q):
-        self.b1 = b1
-        self.q = q
-
-    def __iter__(self):
-        return self
-
+class GeometricProgression(ArithmeticProgression):
     def __next__(self):
-        result = self.b1
-        self.b1 *= self.q
-        return result
+        elem = self.a1
+        self.a1 *= self.delta
+        return elem
