@@ -9,9 +9,7 @@ class HighScoreTable:
 
     def update(self, record):
         self._scores.append(record)
-        self._scores.sort(reverse=True)
-        if len(self._scores) > self.max_records:
-            self._scores = self._scores[:self.max_records]
+        self._scores = sorted(self._scores, reverse=True)[:self.max_records]
 
     def reset(self):
         self._scores.clear()
