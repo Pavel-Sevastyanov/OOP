@@ -5,7 +5,7 @@ class HighScoreTable:
 
     @property
     def scores(self):
-        return self._scores
+        return self._scores[:]
 
     def update(self, record):
         self._scores.append(record)
