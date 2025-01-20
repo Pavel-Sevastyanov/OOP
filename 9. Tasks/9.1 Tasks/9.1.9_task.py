@@ -18,13 +18,11 @@ class TicTacToe:
             print('Недоступная клетка')
 
     def winner(self):
-        diagonal = ''
-        reverse_diagonal = ''
+        diagonal, reverse_diagonal = '', ''
         for i in range(3):
             diagonal += self.table[i][i]
             reverse_diagonal += self.table[-i][-i]
-            row = ''
-            col = ''
+            row, col = '', ''
             for j in range(3):
                 row += self.table[i][j]
                 col += self.table[j][i]
