@@ -28,7 +28,7 @@ class TicTacToe:
                 col += self.table[j][i]
             if self.__class__.check(row, col):
                 self.winner_game = self.table[i][i]
-                return self.winner_game
+                break
         if self.__class__.check(diagonal, reverse_diagonal):
             self.winner_game = self.table[1][1]
         if self.count == 9 and not self.winner_game:
