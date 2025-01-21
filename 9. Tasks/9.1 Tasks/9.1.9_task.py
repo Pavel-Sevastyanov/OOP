@@ -26,16 +26,11 @@ class TicTacToe:
             for j in range(3):
                 row += self.table[i][j]
                 col += self.table[j][i]
-            if self.__class__.check(row):
-                self.winner_game = row[0]
+            if self.__class__.check(row, col):
+                self.winner_game = self.table[i][i]
                 return self.winner_game
-            elif self.__class__.check(col):
-                self.winner_game = col[0]
-                return self.winner_game
-        if self.__class__.check(diagonal):
-            self.winner_game = diagonal[0]
-        elif self.__class__.check(reverse_diagonal):
-            self.winner_game = reverse_diagonal[0]
+        if self.__class__.check(diagonal, reverse_diagonal):
+            self.winner_game = self.table[1][1]
         if self.count == 9 and not self.winner_game:
             self.winner_game = 'Ничья'
         return self.winner_game
@@ -45,5 +40,6 @@ class TicTacToe:
         print('\n-----\n'.join(table))
 
     @staticmethod
-    def check(line):
-        return ' ' not in line and len(set(line)) == 1
+    def check(line1, line2):
+        result = any([line1 in ('XXX', 'OOO'), line2 in ('XXX', 'OOO')])
+        return result
